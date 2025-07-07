@@ -39,4 +39,8 @@ jobs:
          username: ${{ secrets.USERNAME }}
          password: ${{ secrets.PASSWORD }}
          port: ${{ secrets.PORT }}
-         script: kubectl get nodes
+         scp: |
+         /target/* .war => /tmp/
+         last_ssh: |
+         ls -lart /tmp
+         
